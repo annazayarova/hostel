@@ -1,25 +1,30 @@
+import { ThemeProvider } from 'styled-components';
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import { GlobalStyle, theme } from './theme';
+
+import About from './pages/About';
+import Agenda from './pages/Agenda';
+import Contact from './pages/Contact';
+import Footer from './pages/Footer';
+import Gallery from './pages/Gallery';
+import Home from './pages/Home';
+import BookNow from './common/BookNow';
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={ theme } >
+      <GlobalStyle />
+
+      <BookNow />
+
+      <Home />
+      <Gallery />
+      <About />
+      <Agenda />
+      <Contact />
+      <Footer />
+      </ThemeProvider>
   );
 }
 
