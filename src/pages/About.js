@@ -209,10 +209,10 @@ const BoldText = styled(Text)`
 `;
 
 const StyledText = styled(Text)`
-    margin-top: 115px;
+    margin: 115px 0 0;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        margin-top: 20px;
+        margin: 10px 0 0;
     }
 `;
 
@@ -220,6 +220,6 @@ const StyledSubtitle = styled(SubTitle)`
     margin: 115px 0 10px;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        margin: 10px 0;
+        margin: 0 0 10px;
     }
 `;

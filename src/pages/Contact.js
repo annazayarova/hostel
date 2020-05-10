@@ -40,7 +40,7 @@ const Contact = () => {
 
                     <ListItem href='mailto:info.lemongrasshostel@gmail.com'>
                         <FillText>Email</FillText>
-                        <Text small>info.lemongrasshostel@gmail.com</Text>
+                        <SmallText small>info.lemongrasshostel@gmail.com</SmallText>
                     </ListItem>
                 </StyledList>
 
@@ -52,12 +52,12 @@ const Contact = () => {
 export default Contact;
 
 const Root = styled.div`
-    padding: 0 125px 90px 0;
+    padding: 0 125px 140px 0;
     display: flex;
     position: relative;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        padding: 0 20px 30px;
+        padding: 0 20px 60px;
         flex-direction: column;
     }
 `;
@@ -69,6 +69,12 @@ const Copy = styled(Text)`
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         margin-top: 20px;
+    }
+`;
+
+const SmallText = styled(Text)`
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        font-size: 14px !important;
     }
 `;
 

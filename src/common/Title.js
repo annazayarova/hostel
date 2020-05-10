@@ -37,6 +37,6 @@ const Text = styled.h1`
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         transform: rotate(0deg);
-        margin: 40px 0 0 0;
+        margin: 60px 0 0 0;
     }
 `;
