@@ -38,7 +38,6 @@ const Hover = styled.div`
     text-transform: uppercase;
     top: 0;
     visibility: hidden;
-    white-space: nowrap;
     width: 100px;
     font-weight: bold;
 
@@ -57,7 +56,6 @@ const Book = styled(ArcText)`
 `;
 
 const Root = styled.div`
-    border-radius: 50%;
     background-color: transparent;
     color: black;
     cursor: pointer;

@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
         height: 100%;
         position: relative;
         overflow-x: hidden;
+        line-height: 1;
     }
 
     img, svg {

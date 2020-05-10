@@ -30,7 +30,7 @@ const Text = styled.h1`
     width: 125px;
     font-size: 14px;
     letter-spacing: 1px;
-    margin: 135px 0 0 0;
+    margin: 140px 0 0 0;
     padding: 0;
     transform: rotate(-90deg);
     text-transform: uppercase;

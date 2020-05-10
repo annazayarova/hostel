@@ -22,13 +22,13 @@ const Contact = () => {
 
                 <a href="https://www.facebook.com/lemongrasshostel" target="_blank">
                     <Link>
-                        <span>Facebook</span>
+                        <em>Facebook</em>
                     </Link>
                 </a>
 
                 <a href="https://www.instagram.com/lemongrasshostel/" target="_blank">
                     <Link>
-                        <span>Instagram</span>
+                        <em>Instagram</em>
                     </Link>
                 </a>
 
@@ -38,11 +38,13 @@ const Contact = () => {
                         <Text small>+357 99 881812</Text>
                     </ListItem>
 
-                    <ListItem href='mailto:lemongrasshostel@gmail.com'>
+                    <ListItem href='mailto:info.lemongrasshostel@gmail.com'>
                         <FillText>Email</FillText>
-                        <Text small>lemongrasshostel@gmail.com</Text>
+                        <Text small>info.lemongrasshostel@gmail.com</Text>
                     </ListItem>
                 </StyledList>
+
+                <Copy small><em>&copy; 2020 Lemongrass hostel</em></Copy>
             </Content>
         </Root>
 )};
@@ -55,11 +57,20 @@ const Root = styled.div`
     position: relative;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        padding: 0 20px 90px;
+        padding: 0 20px 30px;
         flex-direction: column;
     }
 `;
 
+
+const Copy = styled(Text)`
+    margin-top: 40px;
+    text-align: right;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        margin-top: 20px;
+    }
+`;
 
 const Content = styled.div`
     margin-top: 130px;
@@ -78,7 +89,7 @@ const StyledList = styled.div`
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         width: 100%;
         margin-left: 0;
-        margin-top: 40px;
+        margin: 30px 0;
     }
 `;
 
@@ -124,7 +135,11 @@ const Link = styled(StyledText)`
 `;
 
 const Address = styled(Text)`
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        margin-bottom: 20px;
+    }
 `;
 
 const A = styled.a`

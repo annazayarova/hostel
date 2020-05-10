@@ -8,7 +8,7 @@ const Text = styled.p`
     margin: 0 0 ${props => props.bottomOffset ? '40px' : '0' };
     padding: 0;
     font-weight: ${props => props.small ? '400' : '900' };
-    letter-spacing: -1px;
+    letter-spacing: -0.75px;
 
     span {
         -webkit-text-stroke: ${props => props.small ? 'none' : '1px black' };

@@ -193,12 +193,12 @@ const Container = styled.div`
 
 const Root = styled.div`
     background-color: #9BD9BC;
-    padding: 0 125px 90px 0;
+    padding: 0 125px 140px 0;
     display: flex;
     position: relative;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        padding: 0 20px 90px;
+        padding: 0 20px 60px;
         flex-direction: column;
     }
 `;

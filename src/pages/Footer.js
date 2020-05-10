@@ -15,12 +15,10 @@ const Footer = () => {
         <Root>
             <Square>
                 <StyledPot />
-                <CopyrightLeft>&copy; 2020 Lemo</CopyrightLeft>
             </Square>
 
             <StyledSquare onClick={ handleScrollTop }>
                 <StyledArrow />
-                <CopyrightRight>ngass Hostel</CopyrightRight>
             </StyledSquare>
         </Root>
     );
@@ -28,42 +26,15 @@ const Footer = () => {
 
 export default Footer;
 
-const CopyrightLeft = styled.span`
-    color: #DC2C6F;
-    position: absolute;
-    right: 0;
-    font-size: 14px;
-    bottom: 10px;
-    font-family: ${ props => props.theme.fontFamily.primary };
-    letter-spacing: 0.75px;
-    font-weight: bold;
-
-    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        bottom: 3px;
-        font-size: 10px;
-    }
-`;
-
-const CopyrightRight = styled.span`
-    color: #FDBA53;
-    position: absolute;
-    left: 1px;
-    font-size: 14px;
-    bottom: 10px;
-    font-family: ${ props => props.theme.fontFamily.primary };
-    font-weight: bold;
-
-    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        bottom: 3px;
-        font-size: 10px;
-    }
-`;
-
 const Root = styled.div`
     width: 100%;
     display: flex;
     position: relative;
     align-items: flex-end;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        flex-direction: column;
+    }
 `;
 
 const Square = styled.div`
@@ -78,6 +49,10 @@ const Square = styled.div`
         content: "";
         display: block;
         padding-bottom: 100%;
+    }
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        width: 100%;
     }
 `;
 

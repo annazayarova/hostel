@@ -1,45 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { ReactComponent as Cat } from '../img/cat.svg';
-import ItemList from '../common/ItemList';
+import Title from '../common/Title';
 
-const items=[{
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}, {
-    value: 'coming soon...'
-}];
+import { ReactComponent as Cat } from '../img/cat.svg';
 
 const Agenda = () => {
     return (
         <Root>
-            <CatWrapper>
-                <StyledCat />
-            </CatWrapper>
+            <Title text="What to do" />
 
-            <StyledItemList items={ items }
-                title="city agenda"
-            />
+            <Container>
+                <CatWrapper>
+                    <StyledCat />
+                </CatWrapper>
+            </Container>
         </Root>
     );
 }
@@ -47,26 +22,20 @@ const Agenda = () => {
 export default Agenda;
 
 const Root = styled.div`
-    background: #FDBA53;
+    background-color: #FDBA53;
     min-height: 100%;
+    padding: 0 125px 90px 0;
+    display: flex;
     position: relative;
-    padding: 20px 20px 90px;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        padding: 15px;
+        padding: 0 20px 60px;
+        flex-direction: column;
     }
 `;
 
-const StyledItemList = styled(ItemList)`
-    margin-top: calc(-100vh + 60px);
-    width: 50%;
-    margin-left: auto;
-
-    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        margin-top: 20px;
-        width: 100%;
-        margin-left: 0;
-    }
+const Container = styled.div`
+    width: 100%;
 `;
 
 const StyledCat = styled(Cat)`
