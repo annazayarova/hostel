@@ -198,7 +198,7 @@ const Root = styled.div`
     position: relative;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        padding: 0 20px 60px;
+        padding: 0 20px 20px;
         flex-direction: column;
     }
 `;

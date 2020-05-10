@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import smoothscroll from 'smoothscroll-polyfill';
 
@@ -7,10 +7,12 @@ import { ReactComponent as Pot } from '../img/pot.svg';
 
 const Footer = () => {
     const handleScrollTop = () => {
-        smoothscroll.polyfill();
         window.scrollTo(0,0);
     };
 
+    useEffect(() => {
+        smoothscroll.polyfill();
+    })
     return (
         <Root>
             <Square>
