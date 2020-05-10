@@ -39,7 +39,7 @@ const Contact = () => {
                     </ListItem>
 
                     <ListItem href='mailto:lemongrasshostel@gmail.com'>
-                        <FillText>Drop a line</FillText>
+                        <FillText>Email</FillText>
                         <Text small>lemongrasshostel@gmail.com</Text>
                     </ListItem>
                 </StyledList>

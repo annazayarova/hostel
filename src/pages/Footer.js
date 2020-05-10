@@ -1,10 +1,16 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import { ReactComponent as Arrow } from '../img/flash.svg';
 import { ReactComponent as Pot } from '../img/pot.svg';
 
-const Footer = ({ myRef }) => {
+const Footer = () => {
+    const handleScrollTop = () => {
+        smoothscroll.polyfill();
+        window.scrollTo(0,0);
+    };
+
     return (
         <Root>
             <Square>
@@ -12,7 +18,7 @@ const Footer = ({ myRef }) => {
                 <CopyrightLeft>&copy; 2020 Lemo</CopyrightLeft>
             </Square>
 
-            <StyledSquare onClick={ () => window.scrollTo(0,0) }>
+            <StyledSquare onClick={ handleScrollTop }>
                 <StyledArrow />
                 <CopyrightRight>ngass Hostel</CopyrightRight>
             </StyledSquare>
@@ -30,6 +36,7 @@ const CopyrightLeft = styled.span`
     bottom: 10px;
     font-family: ${ props => props.theme.fontFamily.primary };
     letter-spacing: 0.75px;
+    font-weight: bold;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         bottom: 3px;
@@ -44,6 +51,7 @@ const CopyrightRight = styled.span`
     font-size: 14px;
     bottom: 10px;
     font-family: ${ props => props.theme.fontFamily.primary };
+    font-weight: bold;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         bottom: 3px;
