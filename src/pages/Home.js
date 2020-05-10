@@ -15,7 +15,7 @@ const Home = () => {
             <BottomTransition text="sunny limassol cyprus" />
 
             <MiddleTransition fontSize='26px'
-                mobileFontSize='12px'
+                mobileFontSize='18px'
                 transform="inherit"
                 text="Make yourself at home. Mi casa es su casa. Sentitevi come a casa vostra. Fais comme chez toi. Sinta-se em casa. Fühle sie sich wie zu hause."
             />
@@ -52,7 +52,8 @@ const MiddleTransition = styled(Transition)`
     text-transform: uppercase;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        margin-top: -33px;
+        margin-top: 0;
+        top: 25vh;
     }
 `;
 

@@ -82,7 +82,7 @@ const Text = styled.span`
 	text-transform: ${ ({ transform }) => transform ? transform : 'uppercase' };
 
 	@media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-		font-size: ${ ({ fontSize }) => fontSize ? fontSize : '250px' };
-		font-size: ${ ({ mobileFontSize }) => mobileFontSize ? mobileFontSize : '250px' };
+		font-size: ${ ({ fontSize }) => fontSize ? fontSize : '50vw' };
+		font-size: ${ ({ mobileFontSize }) => mobileFontSize ? mobileFontSize : '50vw' };
     }
 `;
