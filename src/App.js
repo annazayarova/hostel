@@ -10,8 +10,11 @@ import Footer from './pages/Footer';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import BookNow from './common/BookNow';
+import smoothscroll from 'smoothscroll-polyfill';
 
 const App = () => {
+  smoothscroll.polyfill();
+
   return (
     <ThemeProvider theme={ theme } >
       <GlobalStyle />

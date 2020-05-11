@@ -19,55 +19,56 @@ const icons = [{
     title: 'tea & coffee',
     top: '-15px',
     left: '45%',
-    rotate: '5'
+    rotate: '35',
+    delay: '0'
 }, {
     icon: <HairDryer />,
     title: 'hair dryer',
     top: '20%',
     left: '65%',
-    rotate: '10'
+    delay: '1'
 }, {
     icon: <Iron />,
     title: 'iron',
     top: '40%',
     left: '87%',
-    rotate: '0'
+    delay: '1.5'
 }, {
     icon: <Shampoo />,
     title: 'shampoo',
     top: '35%',
     left: '20%',
-    rotate: '5'
+    delay: '0.5'
 }, {
     icon: <WashingMachine />,
     title: 'laundry',
     top: '82%',
     left: '45%',
-    rotate: '0'
+    delay: '2'
 }, {
     icon: <Towel />,
     title: 'towel',
     top: '8%',
     left: '15%',
-    rotate: '-10'
+    delay: '2.5'
 }, {
     icon: <Plugin />,
     title: 'adaptor',
     top: '65%',
     left: '25%',
-    rotate: '-5'
+    delay: '3'
 }, {
     icon: <Bank />,
     title: 'locker',
     top: '60%',
     left: '65%',
-    rotate: '-2'
+    delay: '3.3'
 }, {
     icon: <Bunk />,
     title: 'bunk',
     top: '55%',
     left: '0%',
-    rotate: '-5'
+    delay: '4'
 }];
 
 const Facilities = () => {
@@ -78,11 +79,13 @@ const Facilities = () => {
             { icons.map(icon =>
                 <StyledIcon top={ icon.top }
                     left={ icon.left }
-                    rotate={ icon.rotate }
+                    animationName={ icon.animationName }
                 >
-                    { icon.icon }
+                    <Icon delay={ icon.delay }
+                        rotate={ icon.rotate }
+                    >{ icon.icon }</Icon>
 
-                    <StyledSubtitle>
+                    <StyledSubtitle delay={ icon.delay }>
                         { icon.title }
                     </StyledSubtitle>
                 </StyledIcon>
@@ -93,18 +96,27 @@ const Facilities = () => {
 
 export default Facilities;
 
-const animate = keyframes`
-0% { transform: translate(1px, 1px) rotate(0deg); }
-  10% { transform: translate(-1px, -2px) rotate(-1deg); }
-  20% { transform: translate(-3px, 0px) rotate(1deg); }
-  30% { transform: translate(3px, 2px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 2px) rotate(-1deg); }
-  60% { transform: translate(-3px, 1px) rotate(0deg); }
-  70% { transform: translate(3px, 1px) rotate(-1deg); }
-  80% { transform: translate(-1px, -1px) rotate(1deg); }
-  90% { transform: translate(1px, 2px) rotate(0deg); }
-  100% { transform: translate(1px, -2px) rotate(-1deg); }
+
+const shakeText = keyframes`
+0% {
+    transform: rotate(0deg);
+}
+
+4% {
+    transform: rotate(-3deg);
+}
+
+6% {
+    transform: rotate(3deg);
+}
+
+8% {
+    transform: rotate(-5deg);
+}
+
+10% {
+    transform: rotate(0deg);
+}
 `;
 
 const Root = styled.div`
@@ -143,6 +155,9 @@ const StyledSubtitle = styled(SubTitle)`
     font-size: 18px;
     text-align: center;
     line-height: 18px;
+    animation: ${ shakeText } 5s cubic-bezier(.36,.07,.19,.97) ${ props => props.delay }s infinite;
+    backface-visibility: hidden;
+    perspective: 1000px;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         font-size: 16px;
@@ -154,6 +169,8 @@ const StyledIcon = styled.div`
     position: absolute;
     top: ${ props => props.top };
     left: ${ props => props.left };
-    transform: rotate(${ props => props.rotate }deg);
-    animation: ${ animate } 0.5s infinite;
+    transform: translate3d(0, 0, 0);
+`;
+
+const Icon = styled.div`
 `;

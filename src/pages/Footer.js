@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
-import smoothscroll from 'smoothscroll-polyfill';
 
 import { ReactComponent as Arrow } from '../img/flash.svg';
 import { ReactComponent as Pot } from '../img/pot.svg';
 
 const Footer = () => {
     const handleScrollTop = () => {
-        window.scrollTo(0,0);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
     };
 
-    useEffect(() => {
-        smoothscroll.polyfill();
-    })
     return (
         <Root>
             <Square>
