@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import ArcText from './ArcText';
+import { ReactComponent as Book } from '../img/book.svg';
 
 const BookNow = () => {
+    const [scrollTop, setScrollTop] = useState(0);
+
+    const onScroll = (e) => {
+        setScrollTop(e.target.documentElement.scrollTop);
+    }
+
+    useEffect(() => {
+        window.addEventListener('scroll', onScroll);
+    },[]);
+
     return (
         <a href="https://portal.freetobook.com/reservations?w_id=18387&w_tkn=PnphNqqFb598EFvAX4DGTAGssUpLlCzUPDuS6FzkhZQqloMAMMWHklUwIjRkG" target="_blank">
             <Root>
-                <Book text="book now book now" arc={ 340 } radius={ 41 } />
+                <Rotate rotate={ scrollTop }>
+                    <StyledBook />
+                </Rotate>
+
                 <Hover>book now</Hover>
             </Root>
         </a>
@@ -30,15 +43,16 @@ const Hover = styled.div`
     cursor: pointer;
     display: fixed;
     font-size: 12px;
-    height: 100px;
+    line-height: 12px;
+    height: 90px;
     justify-content: center;
     opacity: 0;
     position: absolute;
-    right: -50px;
+    right: 0;
     text-transform: uppercase;
-    top: 0;
+    top: 10px;
     visibility: hidden;
-    width: 100px;
+    width: 90px;
     font-weight: bold;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
@@ -47,12 +61,19 @@ const Hover = styled.div`
         opacity: 1;
         width: 80px;
     }
-
 `;
 
-const Book = styled(ArcText)`
+const StyledBook = styled(Book)`
+    width: 85px;
     visibility: visible;
     opacity: 1;
+`;
+
+const Rotate = styled.div`
+    transform: rotate(${ props => props.rotate }deg);
+    position: fixed;
+    right: 20px;
+    top: 0;
 `;
 
 const Root = styled.div`
@@ -60,8 +81,8 @@ const Root = styled.div`
     color: black;
     cursor: pointer;
     position: fixed;
-    right: 60px;
-    top: 20px;
+    right: 20px;
+    top: 0;
     z-index: 20;
 
     :hover {
@@ -72,7 +93,7 @@ const Root = styled.div`
             visibility: visible;
         }
 
-        ${ Book } {
+        ${ StyledBook } {
             opacity: 0;
             visibility: hidden;
         }
@@ -80,8 +101,8 @@ const Root = styled.div`
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         position: fixed;
-        right: 60px;
-        top: 10px;
+        right: 10px;
+        top: 0;
 
         ${ Hover } {
             background-color: black;
@@ -90,7 +111,7 @@ const Root = styled.div`
             visibility: visible;
         }
 
-        ${ Book } {
+        ${ StyledBook } {
             opacity: 0;
             visibility: hidden;
         }
