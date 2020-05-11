@@ -7,7 +7,10 @@ import { ReactComponent as Instagram } from '../img/inst.svg'
 const Social = () => {
     return (
         <Root>
-            <Wrapper href="https://www.facebook.com/lemongrasshostel" target="_blank">
+            <Wrapper href="https://www.facebook.com/lemongrasshostel"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
                 <StyledFacebook />
             </Wrapper>
 
@@ -53,6 +56,7 @@ const Root = styled.div`
     left: 20px;
     bottom: 20px;
     display: flex;
+    z-index: 100;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         left: 10px;

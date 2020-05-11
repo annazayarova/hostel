@@ -48,17 +48,17 @@ export default Transition;
 
 const marquee = keyframes`
     0% {
-        transform: translate3d(calc(-25% + 30vw), 0, 0);
+		transform: translate3d(calc(-25% + 30vw), 0, 0);
     }
 
     100% {
-        transform: translate3d(calc(-50% + 30vw), 0, 0);
+		transform: translate3d(calc(-50% + 30vw), 0, 0);
     }
 `;
 
 const Root = styled.div`
     width: 100%;
-    user-select: none;
+	user-select: none;
 `;
 
 const Marquee = styled.div`
@@ -67,19 +67,23 @@ const Marquee = styled.div`
 `;
 
 const Inner = styled.div`
-    width: fit-content;
+	width: fit-content;
 	display: flex;
 	position: relative;
 	animation: ${ marquee } 12s linear infinite;
 	animation-play-state: running;
+	backface-visibility: hidden;
+	transform-style: preserve-3d;
 `;
 
 const Text = styled.span`
-    white-space: nowrap;
 	font-size: ${ ({ fontSize}) => fontSize ? fontSize : '15vw' };
-	padding: 20px 1vw 0;
 	line-height: 1;
+	padding: 20px 1vw 0;
 	text-transform: ${ ({ transform }) => transform ? transform : 'uppercase' };
+	white-space: nowrap;
+	transform-style: preserve-3d;
+	backface-visibility: hidden;
 
 	@media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
 		font-size: ${ ({ fontSize }) => fontSize ? fontSize : '50vw' };

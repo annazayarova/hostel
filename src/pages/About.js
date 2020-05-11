@@ -17,6 +17,16 @@ const items=[{
     strokeHeader: 2020,
     award: 'Traveller Review Awards'
 }, {
+    value: 'Travel Myth',
+    img: img2017,
+    strokeHeader: 2020,
+    award: 'Top 3 adult only accomodation in Limassol'
+}, {
+    value: 'Travel Myth',
+    img: img2017,
+    strokeHeader: 2019,
+    award: 'Top adult only accomodation in Limassol'
+}, {
     value: 'HOSCAR Awards',
     img: img2017,
     strokeHeader: 2019,

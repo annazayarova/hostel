@@ -34,6 +34,8 @@ export const GlobalStyle = createGlobalStyle`
         position: relative;
         overflow-x: hidden;
         line-height: 1;
+	    -webkit-font-smoothing: antialiased;
+	    -moz-osx-font-smoothing: grayscale;
     }
 
     img, svg {
