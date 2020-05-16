@@ -12,10 +12,10 @@ import SubTitle from '../common/SubTitle';
 import Facilities from '../common/Facilities';
 
 const items=[{
-    value: 'Booking.com',
+    value: 'booking.com Traveller Review Awards',
     img: img2020,
     strokeHeader: 2020,
-    award: 'Traveller Review Awards'
+    award: '8.9 of 10'
 }, {
     value: 'Travel Myth',
     img: img2017,

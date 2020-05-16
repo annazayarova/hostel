@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Title from '../common/Title';
+import Text from '../common/Text';
 
 import { ReactComponent as Cat } from '../img/cat.svg';
 
@@ -9,11 +10,17 @@ const Agenda = () => {
     return (
         <Root>
             <Title text="What to do" />
+            <CatWrapper>
+                    <StyledCat />
+            </CatWrapper>
 
             <Container>
-                <CatWrapper>
-                    <StyledCat />
-                </CatWrapper>
+                <Text small>
+                    We create these videos during our roadtrips to provide a sense of what there is to see in the island.
+                </Text>
+                <Wrapper>
+                </Wrapper>
+
             </Container>
         </Root>
     );
@@ -39,30 +46,35 @@ const Container = styled.div`
 `;
 
 const StyledCat = styled(Cat)`
-    width: 50%;
+    width: 60px;
     height: auto;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        position: relative;
-        width: 100%;
-        left: 0;
-        margin: 0 0 40px;
+
     }
 `;
 
 const CatWrapper = styled.div`
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    top: 0;
-    position: sticky;
-    width: 50%;
-    height: 100vh;
-    left: 0;
+    top: 125px;
+    left: 90px;
+    position: absolute;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        position: relative;
-        width: 70%;
-        margin: 0 0 40px;
-        height: auto;
+
+`;
+
+
+const Wrapper = styled.div`
+    overflow: hidden;
+    padding-bottom: 56.25%;
+    position: relative;
+    height: 0;
+
+    iframe{
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+    }
 `;
