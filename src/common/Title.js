@@ -1,10 +1,10 @@
 import styled from 'styled-components';
 import React from 'react';
 
-const Title = ({ text }) => {
+const Title = ({ offset, text }) => {
     return (
         <Root>
-            <Text>
+            <Text offset={ offset }>
                 { text }
             </Text>
         </Root>
@@ -27,10 +27,11 @@ const Root = styled.div`
 const Text = styled.h1`
     color: black;
     font-weight: bold;
-    width: 125px;
+    white-space: nowrap;
     font-size: 14px;
     letter-spacing: 1px;
-    margin: 140px 0 0 0;
+    width: 125px;
+    margin: ${ props => props.offset ? props.offset : '140px' } 0 0;
     padding: 0;
     transform: rotate(-90deg);
     text-transform: uppercase;
