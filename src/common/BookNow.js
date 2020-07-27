@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 
-import { ReactComponent as Book } from '../img/book.svg';
+import { ReactComponent as Book } from '../img/bookArc.svg';
 
 const BookNow = () => {
     const [scrollTop, setScrollTop] = useState(0);
@@ -15,7 +15,9 @@ const BookNow = () => {
     },[]);
 
     return (
-        <a href="https://portal.freetobook.com/reservations?w_id=18387&w_tkn=PnphNqqFb598EFvAX4DGTAGssUpLlCzUPDuS6FzkhZQqloMAMMWHklUwIjRkG" target="_blank">
+        <a rel="noopener noreferrer"
+            href="https://portal.freetobook.com/reservations?w_id=18387&w_tkn=PnphNqqFb598EFvAX4DGTAGssUpLlCzUPDuS6FzkhZQqloMAMMWHklUwIjRkG" target="_blank"
+        >
             <Root>
                 <Rotate rotate={ scrollTop }>
                     <StyledBook />

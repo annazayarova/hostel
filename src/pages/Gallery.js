@@ -1,76 +1,149 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Text from '../common/Text';
+import Img from '../common/Img';
+
+import { ReactComponent as GalleryTitle } from '../img/gallery.svg';
+
+import bath from '../img/gallery/mainPage/bath.jpg';
+import kitchen from '../img/gallery/mainPage/kitchen.jpg';
+import lounge from '../img/gallery/mainPage/lounge.jpg';
+import rooms from '../img/gallery/mainPage/rooms.jpg';
 
 const Gallery = () => {
     return (
         <Root>
-            <StyledText> is coming soon...</StyledText>
-            <TitleWrapper>
-                gallery
-            </TitleWrapper>
-    </Root>
+            <StyledGalleryTitle />
+
+            <Offset>
+
+            <Container>
+                <Col offsetLeft={ 16 }
+                    width={ 25 }
+                >
+                    <Title width={ 4.9 }>
+                        Lounge
+                    </Title>
+                    <Img src={ lounge } />
+                </Col>
+
+                <Col offsetLeft={ 20 }
+                    offsetTop={ 4 }
+                    width={ 20 }
+                >
+                    <Title width={ 4.3 }>
+                        Rooms
+                    </Title>
+                    <Img src={ rooms } />
+                </Col>
+            </Container>
+
+                <Container>
+                    <Col offsetLeft={ 20 }
+                        width={ 40 }
+                    >
+                        <Title width={ 7.7 }>
+                            kitchen
+                        </Title>
+
+                        <Img src={ kitchen } />
+                    </Col>
+
+                    <Col offsetLeft={ 10 }
+                        width={ 20 }
+                    >
+                        <Title width={ 6.7 }>
+                            bath
+                        </Title>
+
+                        <Img src={ bath } />
+                    </Col>
+                </Container>
+                </Offset>
+        </Root>
     );
 }
 
 export default Gallery;
 
-const Content = styled.div`
-    margin: calc(-100vh + 60px) auto 60px;
-    width: 100%;
+
+const StyledGalleryTitle = styled(GalleryTitle)`
+    height: 100vh;
+    left: 0;
+    position: sticky;
+    top: 0;
+    width: auto;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        display: none;
+    }
 `;
 
-const FlexEnd = styled.div`
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-`;
+const Offset = styled.div`
+    margin-top: calc(-100vh + 140px);
 
-const FlexStart = styled.div`
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-`;
-
-const Img = styled.img`
-    width: ${ ({ width }) => `${ width }%` };
-    padding: 5px;
-`;
-
-const Block = styled.div`
-    width: 100%;
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        margin-top: 0;
+    }
 `;
 
 const Root = styled.div`
-    background: #FDBA53;
-    height: auto;
+    background-color: #9BD9BC;
     position: relative;
-    width: 100%;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        padding: 10px;
+    }
 `;
 
-const TitleWrapper = styled.div`
+const Title = styled.div`
+    position: absolute;
+    z-index: 2;
+    top: 5px;
     width: 100%;
-    height: 100vh;
-    font-weight: bold;
-    position: sticky;
-    font-size: 15vw;
+    text-align: center;
+    font-size: ${ ({ width }) => width }vw;
     text-transform: uppercase;
-    -webkit-text-stroke: 2px black;
-    text-stroke: 2px black;
-    -webkit-text-fill-color: rgb(0,0,0,0);
-    text-fill-color: rgb(0,0,0,0);
-    top: 0;
-    z-index: 11;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-family: ${ props => props.theme.fontFamily.primary };
+    font-weight: bold;
+    mix-blend-mode: overlay;
+    letter-spacing: 4px;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        font-size: 14vw;
+        justify-content: center;
+    }
 `;
 
-const StyledText = styled(Text)`
-    padding-top: 40px;
-    z-index: 11;
+const Container = styled.div`
+    width: 100%;
+    position: relative;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 140px;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        flex-direction: column;
+        padding-bottom: 0;
+    }
+`;
+
+const Col = styled.div`
+    margin-left: ${ ({ offsetLeft }) => offsetLeft }%;
+    margin-top: ${ ({ offsetTop }) => offsetTop }%;
+    position: relative;
+    width: ${ ({ width }) => width }%;
+    cursor: pointer;
+
+    &:hover {
+        ${ Title } {
+            color: ${ ({ theme }) => theme.tertiaryColor };
+            mix-blend-mode: inherit;
+        }
+    }
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        width: 100%;
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
 `;

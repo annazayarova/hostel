@@ -122,10 +122,10 @@ const About = () => {
                     </Text>
 
                     <BoldText small>
-                        <em>Free WiFi</em>
+                        <em>Free Wi-Fi</em>
                     </BoldText>
                     <Text small bottomOffset>
-                        Free & fast Wi-FI is available in every room of the hostel
+                        Free & fast Wi-Fi is available in every room of the hostel
                     </Text>
 
                     <BoldText small>
@@ -202,7 +202,6 @@ const Container = styled.div`
 `;
 
 const Root = styled.div`
-    background-color: #9BD9BC;
     padding: 0 125px 140px 0;
     display: flex;
     position: relative;

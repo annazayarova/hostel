@@ -20,13 +20,19 @@ const Contact = () => {
                     Limassol, Cyprus
                 </Address>
 
-                <a href="https://www.facebook.com/lemongrasshostel" target="_blank">
+                <a rel="noopener noreferrer"
+                    href="https://www.facebook.com/lemongrasshostel" 
+                    target="_blank"
+                >
                     <Link>
                         <em>Facebook</em>
                     </Link>
                 </a>
 
-                <a href="https://www.instagram.com/lemongrasshostel/" target="_blank">
+                <a href="https://www.instagram.com/lemongrasshostel/" 
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
                     <Link>
                         <em>Instagram</em>
                     </Link>

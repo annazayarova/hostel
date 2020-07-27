@@ -4,8 +4,6 @@ import styled from 'styled-components';
 import Title from '../common/Title';
 import Text from '../common/Text';
 
-import { ReactComponent as Cat } from '../img/cat.svg';
-
 const Agenda = () => {
     return (
         <Root>
@@ -61,43 +59,10 @@ const Box = styled.div`
     }
 `;
 
-const StyledCat = styled(Cat)`
-    width: 60px;
-    height: auto;
-
-    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-
-    }
-`;
-
-const CatWrapper = styled.div`
-    top: 125px;
-    left: 90px;
-    position: absolute;
-
-    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-
-`;
-
 const StyledText = styled(Text)`
     margin: 115px 0 0;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         margin: 10px 0 0;
-    }
-`;
-
-const Wrapper = styled.div`
-    overflow: hidden;
-    padding-bottom: 56.25%;
-    position: relative;
-    height: 0;
-
-    iframe{
-        left: 0;
-        top: 0;
-        height: 100%;
-        width: 100%;
-        position: absolute;
     }
 `;

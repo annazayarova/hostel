@@ -27,7 +27,7 @@ const App = () => {
       <Agenda />
       <Contact />
       <Footer />
-      </ThemeProvider>
+    </ThemeProvider>
   );
 }
 
