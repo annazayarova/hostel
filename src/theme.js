@@ -17,7 +17,8 @@ export const theme = {
 
 export const GlobalStyle = createGlobalStyle`
     * {
-        font-smoothing: antialiased;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
         font-stretch: normal;
         font-style: normal;
         text-rendering: optimizeLegibility;

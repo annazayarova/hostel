@@ -1,47 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import img2017 from '../img/2017.jpg';
-import img2018 from '../img/2018.jpg';
-import img2020 from '../img/2020.png';
-
-import List from '../common/ItemList';
+import Awwards from '../common/Awards';
 import Text from '../common/Text';
 import Title from '../common/Title';
 import SubTitle from '../common/SubTitle';
 import Facilities from '../common/Facilities';
-
-const items=[{
-    value: 'booking.com Traveller Review Awards',
-    img: img2020,
-    strokeHeader: 2020,
-    award: '8.9 of 10'
-}, {
-    value: 'Travel Myth',
-    img: img2017,
-    strokeHeader: 2020,
-    award: 'Top 3 adult only accomodation in Limassol'
-}, {
-    value: 'Travel Myth',
-    img: img2017,
-    strokeHeader: 2019,
-    award: 'Top adult only accomodation in Limassol'
-}, {
-    value: 'HOSCAR Awards',
-    img: img2017,
-    strokeHeader: 2019,
-    award: 'Best hostel in Cyprus'
-}, {
-    value: 'HOSCAR Awards',
-    img: img2018,
-    strokeHeader: 2018,
-    award: 'Best hostel in Cyprus'
-}, {
-    value: 'HOSCAR Awards',
-    img: img2017,
-    strokeHeader: 2017,
-    award: 'Best hostel in Cyprus'
-}];
 
 const About = () => {
     return (
@@ -70,7 +34,7 @@ const About = () => {
                     </Block>
 
                     <Block topOffset>
-                        <List items={ items } />
+                        <Awwards />
                     </Block>
                 </Content>
 
@@ -218,7 +182,7 @@ const BoldText = styled(Text)`
 `;
 
 const StyledText = styled(Text)`
-    margin: 115px 0 0;
+    margin: 120px 0 0;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         margin: 10px 0 0;

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Text = styled.p`
     color: black;
     font-size: ${props => props.small ? '16px' : '50px' };
-    line-height: ${props => props.small ? '26px' : '70px' };
+    line-height: ${props => props.small ? '26px' : '60px' };
     text-align: left;
     margin: 0 0 ${props => props.bottomOffset ? '40px' : '0' };
     padding: 0;
@@ -22,8 +22,8 @@ const Text = styled.p`
     }
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        font-size: ${props => props.small ? '16px' : '24px' };
-        line-height: ${props => props.small ? '26px' : '38px' };
+        font-size: ${props => props.small ? '14px' : '24px' };
+        line-height: ${props => props.small ? '22px' : '38px' };
     }
 `;
 

@@ -21,7 +21,7 @@ const Contact = () => {
                 </Address>
 
                 <a rel="noopener noreferrer"
-                    href="https://www.facebook.com/lemongrasshostel" 
+                    href="https://www.facebook.com/lemongrasshostel"
                     target="_blank"
                 >
                     <Link>
@@ -29,12 +29,21 @@ const Contact = () => {
                     </Link>
                 </a>
 
-                <a href="https://www.instagram.com/lemongrasshostel/" 
+                <a href="https://www.instagram.com/lemongrasshostel/"
                     rel="noopener noreferrer"
                     target="_blank"
                 >
                     <Link>
                         <em>Instagram</em>
+                    </Link>
+                </a>
+
+                <a href="https://www.youtube.com/channel/UCMOejWFF7kYRKZzAWQwpTRw"
+                    rel="noopener noreferrer"
+                    target="_blank"
+                >
+                    <Link>
+                        <em>YouTube</em>
                     </Link>
                 </a>
 
@@ -85,7 +94,7 @@ const SmallText = styled(Text)`
 `;
 
 const Content = styled.div`
-    margin-top: 130px;
+    margin-top: 136px;
     width: 100%;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
@@ -106,11 +115,7 @@ const StyledList = styled.div`
 `;
 
 const StyledText = styled(Text)`
-    margin-bottom: 20px;
-
-    :last-of-type {
-        margin-bottom: 0;
-    }
+    margin-bottom: 10px;
 `;
 
 const FillText = styled(Text)`
