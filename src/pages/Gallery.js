@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 import Img from '../common/Img';
-
 import { ReactComponent as GalleryTitle } from '../img/gallery.svg';
 
 import bath from '../img/gallery/mainPage/bath.jpg';
@@ -21,20 +21,25 @@ const Gallery = () => {
                 <Col offsetLeft={ 16 }
                     width={ 25 }
                 >
-                    <Title width={ 4.9 }>
-                        Lounge
-                    </Title>
-                    <Img src={ lounge } />
+                    <Link to="/lounge">
+                        <Title width={ 4.9 }>
+                            Lounge
+                        </Title>
+
+                        <Img src={ lounge } />
+                    </Link>
                 </Col>
 
                 <Col offsetLeft={ 20 }
                     offsetTop={ 4 }
                     width={ 20 }
                 >
-                    <Title width={ 4.3 }>
-                        Rooms
-                    </Title>
-                    <Img src={ rooms } />
+                    <Link to="/lounge">
+                        <Title width={ 4.3 }>
+                            Rooms
+                        </Title>
+                        <Img src={ rooms } />
+                    </Link>
                 </Col>
             </Container>
 
@@ -42,21 +47,25 @@ const Gallery = () => {
                     <Col offsetLeft={ 20 }
                         width={ 40 }
                     >
-                        <Title width={ 7.7 }>
-                            kitchen
-                        </Title>
+                        <Link to="/lounge">
+                            <Title width={ 7.7 }>
+                                kitchen
+                            </Title>
 
-                        <Img src={ kitchen } />
+                            <Img src={ kitchen } />
+                        </Link>
                     </Col>
 
                     <Col offsetLeft={ 10 }
                         width={ 20 }
                     >
-                        <Title width={ 6.7 }>
-                            bath
-                        </Title>
+                        <Link to="/lounge">
+                            <Title width={ 6.7 }>
+                                bath
+                            </Title>
 
-                        <Img src={ bath } />
+                            <Img src={ bath } />
+                        </Link>
                     </Col>
                 </Container>
                 </Offset>
@@ -106,7 +115,7 @@ const Title = styled.div`
     text-transform: uppercase;
     font-family: ${ props => props.theme.fontFamily.primary };
     font-weight: bold;
-    mix-blend-mode: overlay;
+    mix-blend-mode: difference;
     letter-spacing: 4px;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {

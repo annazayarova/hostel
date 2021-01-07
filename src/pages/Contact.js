@@ -59,7 +59,7 @@ const Contact = () => {
                     </ListItem>
                 </StyledList>
 
-                <Copy small><em>&copy; 2020 Lemongrass hostel</em></Copy>
+                <Copy small><em>&copy; { new Date().getFullYear() } Lemongrass hostel</em></Copy>
             </Content>
         </Root>
 )};
@@ -106,6 +106,7 @@ const StyledList = styled.div`
     width: 50%;
     margin-left: auto;
     border-top: 1px solid black;
+    margin-top: -90px;
 
     @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
         width: 100%;
