@@ -5,6 +5,7 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+import smoothscroll from 'smoothscroll-polyfill';
 
 import { GlobalStyle, theme } from './theme';
 import About from './pages/About';
@@ -15,24 +16,23 @@ import Footer from './pages/Footer';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Lounge from './pages/galleries/Lounge';
-import smoothscroll from 'smoothscroll-polyfill';
 
 const App = () => {
   smoothscroll.polyfill();
 
   return (
     <Router>
-    <ThemeProvider theme={ theme } >
-      <GlobalStyle />
+      <ThemeProvider theme={ theme } >
+        <GlobalStyle />
 
-      <Switch>
+        <Switch>
           <Route path="/lounge">
+            <BookNow />
             <Lounge />
           </Route>
-          
+
           <Route exact path="/">
             <BookNow />
-
             <Home />
             <Gallery />
             <About />
@@ -41,7 +41,7 @@ const App = () => {
             <Footer />
           </Route>
         </Switch>
-    </ThemeProvider>
+      </ThemeProvider>
     </Router>
   );
 }

@@ -1,9 +1,9 @@
 import React from 'react';
 import styled, { keyframes } from 'styled-components';
 
-const Logo = () => {
+const Logo = ({ className }) => {
     return (
-        <Root>
+        <Root className={ className }>
             <svg xmlns="http://www.w3.org/2000/svg" width="1771" height="670" viewBox="0 0 1771 670">
                 <g id="Web_1920_1" data-name="Web 1920 – 1" clip-path="url(#clip-Web_1920_1)">
                     <g id="Group_2" data-name="Group 2">

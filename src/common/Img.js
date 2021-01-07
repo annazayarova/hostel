@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Img = ({ src }) => {
+const Img = ({ src, className }) => {
     return (
-        <Root>
+        <Root className={ className }>
             <img src={ src }
                 alt="lemongrass hostel"
             />
