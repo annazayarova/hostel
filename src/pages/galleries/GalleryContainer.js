@@ -38,7 +38,7 @@ const Header = styled.div`
 `;
 
 const Footer = styled.div`
-    padding: 40px 0 50px;
+    padding: 40px 0;
 `;
 
 const StyledImg = styled(Img)`
