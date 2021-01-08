@@ -16,6 +16,10 @@ import Footer from './pages/Footer';
 import Gallery from './pages/Gallery';
 import Home from './pages/Home';
 import Lounge from './pages/galleries/Lounge';
+import Kitchen from './pages/galleries/Kitchen';
+import Bath from './pages/galleries/Bath';
+import Rooms from './pages/galleries/Rooms';
+import Outdoor from './pages/galleries/Outdoor';
 
 const App = () => {
   smoothscroll.polyfill();
@@ -27,8 +31,23 @@ const App = () => {
 
         <Switch>
           <Route path="/lounge">
-            <BookNow />
             <Lounge />
+          </Route>
+
+          <Route path="/kitchen">
+            <Kitchen />
+          </Route>
+
+          <Route path="/bath">
+            <Bath />
+          </Route>
+
+          <Route path="/rooms">
+            <Rooms />
+          </Route>
+
+          <Route path="/outdoor">
+            <Outdoor />
           </Route>
 
           <Route exact path="/">

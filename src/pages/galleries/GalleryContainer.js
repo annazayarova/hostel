@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
@@ -6,21 +6,35 @@ import Img from '../../common/Img';
 import Text from '../../common/Text';
 
 import { ReactComponent as GalleryTitle } from '../../img/gallery.svg';
+import { ReactComponent as Cat } from '../../img/cat.svg';
 
-const GalleryContainer = ({ title, images }) => {
+import BookNow from '../../common/BookNow';
+
+const GalleryContainer = ({ title, images, subtitle }) => {
+
     return (
         <Root>
             <StyledGalleryTitle />
 
+            <BookNow />
+
             <Container>
                 <Col>
                     <Header>
-                        <Text>
-                            { title }
-                        </Text>
+                        <Title>
+                            <StyledCat />
+
+                            <Text>
+                                { title }
+                            </Text>
+                        </Title>
+
+                        <StyledText small>
+                            { subtitle }
+                        </StyledText>
                     </Header>
 
-                    { images.map(image => <StyledImg src={ image } />) }
+                    { images.map(image => <StyledImg src={ image }/>) }
                 </Col>
             </Container>
 
@@ -33,12 +47,35 @@ const GalleryContainer = ({ title, images }) => {
 
 export default GalleryContainer;
 
+const StyledCat = styled(Cat)`
+    width: 48px;
+    height: 48px;
+    margin-right: 10px;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        width: 28px;
+        height: 28px;
+    }
+`;
+
+const Title = styled.div`
+    display: flex;
+`;
+
 const Header = styled.div`
     padding: 50px 0 10px;
 `;
 
+const StyledText = styled(Text)`
+    margin: 10px 0;
+`;
+
 const Footer = styled.div`
     padding: 40px 0;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        padding: 50px 0 40px;
+    }
 `;
 
 const StyledImg = styled(Img)`

@@ -9,6 +9,7 @@ import bath from '../img/gallery/mainPage/bath.jpg';
 import kitchen from '../img/gallery/mainPage/kitchen.jpg';
 import lounge from '../img/gallery/mainPage/lounge.jpg';
 import rooms from '../img/gallery/mainPage/rooms.jpg';
+import outdoor from '../img/gallery/outdoor/outdoor1.jpg';
 
 const Gallery = () => {
     return (
@@ -34,7 +35,7 @@ const Gallery = () => {
                     offsetTop={ 4 }
                     width={ 20 }
                 >
-                    <Link to="/lounge">
+                    <Link to="/rooms">
                         <Title width={ 4.3 }>
                             Rooms
                         </Title>
@@ -47,7 +48,7 @@ const Gallery = () => {
                     <Col offsetLeft={ 20 }
                         width={ 40 }
                     >
-                        <Link to="/lounge">
+                        <Link to="/kitchen">
                             <Title width={ 7.7 }>
                                 kitchen
                             </Title>
@@ -59,12 +60,26 @@ const Gallery = () => {
                     <Col offsetLeft={ 10 }
                         width={ 20 }
                     >
-                        <Link to="/lounge">
+                        <Link to="/bath">
                             <Title width={ 6.7 }>
                                 bath
                             </Title>
 
                             <Img src={ bath } />
+                        </Link>
+                    </Col>
+                </Container>
+
+                <Container>
+                    <Col offsetLeft={ 16 }
+                        width={ 60 }
+                    >
+                        <Link to="/outdoor">
+                            <Title width={ 10 }>
+                                outdoor
+                            </Title>
+
+                            <Img src={ outdoor } />
                         </Link>
                     </Col>
                 </Container>
