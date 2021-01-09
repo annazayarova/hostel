@@ -1,16 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 
 import Img from '../../common/Img';
 import Text from '../../common/Text';
 
 import { ReactComponent as GalleryTitle } from '../../img/gallery.svg';
 import { ReactComponent as Cat } from '../../img/cat.svg';
+import { ReactComponent as CloseIcon } from '../../img/arrow.svg';
 
 import BookNow from '../../common/BookNow';
 
 const GalleryContainer = ({ title, images, subtitle }) => {
+
+    const renderMenu = () => (
+        <>
+            <StyledNavLink to='/lounge'><Text small><em>Lounge</em></Text></StyledNavLink>
+            <StyledNavLink to='/kitchen'><Text small><em>Kitchen</em></Text></StyledNavLink>
+            <StyledNavLink to='/bath'><Text small><em>Bath</em></Text></StyledNavLink>
+            <StyledNavLink to='/rooms'><Text small><em>Rooms</em></Text></StyledNavLink>
+            <StyledNavLink to='/outdoor'><Text small><em>Outdoor</em></Text></StyledNavLink>
+            <CloseNavLink to='/'><Text small><em>Close</em></Text></CloseNavLink>
+        </>
+    );
 
     return (
         <Root>
@@ -21,6 +33,14 @@ const GalleryContainer = ({ title, images, subtitle }) => {
             <Container>
                 <Col>
                     <Header>
+                        <Close>
+                            <CloseLink to='/'><StyledCloseIcon /></CloseLink>
+                        </Close>
+
+                        <MenuTop>
+                            { renderMenu() }
+                        </MenuTop>
+
                         <Title>
                             <StyledCat />
 
@@ -38,9 +58,15 @@ const GalleryContainer = ({ title, images, subtitle }) => {
                 </Col>
             </Container>
 
-            <Footer>
-                <Link to='/'><Close/></Link>
-            </Footer>
+            <MenuBottom>
+                { renderMenu() }
+            </MenuBottom>
+
+            <Link to="/">
+                <Footer small>
+                    <em>&copy; { new Date().getFullYear() } Lemongrass hostel</em>
+                </Footer>
+            </Link>
         </Root>
     );
 }
@@ -63,19 +89,20 @@ const Title = styled.div`
 `;
 
 const Header = styled.div`
-    padding: 50px 0 10px;
+    padding: 10px 0;
 `;
 
 const StyledText = styled(Text)`
     margin: 10px 0;
 `;
 
-const Footer = styled.div`
-    padding: 40px 0;
-
-    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
-        padding: 50px 0 40px;
-    }
+const Footer = styled(Text)`
+    cursor: pointer;
+    padding: 20px 0 40px;
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    text-decoration: underline;
 `;
 
 const StyledImg = styled(Img)`
@@ -124,28 +151,98 @@ const StyledGalleryTitle = styled(GalleryTitle)`
     }
 `;
 
-const Close = styled.div`
-    position: fixed;
-    left: 50%;
-    margin-left: -16px;
-    bottom: 40px;
-    width: 30px;
-    height: 30px;
+const MenuTop = styled.div`
+    margin: 30px 0;
+    display: flex;
+    justify-content: flex-end;
 
-    &:before, &:after {
-        position: absolute;
-        left: 15px;
-        content: ' ';
-        height: 30px;
-        width: 6px;
-        background-color: ${ ({ theme })=> theme.tertiaryColor };
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        display: none;
     }
 
-    &:before {
-        transform: rotate(45deg);
+    ${ Text } {
+        letter-spacing: 0;
+    }
+`;
+
+const MenuBottom = styled.div`
+    margin: 30px 0;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    display: none;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        display: flex;
     }
 
-    &:after {
-        transform: rotate(-45deg);
+    ${ Text } {
+        letter-spacing: 0;
+        margin-top: 10px;
+    }
+`;
+
+const activeClassName = 'nav-item-active'
+
+const StyledNavLink = styled(NavLink).attrs({ activeClassName })`
+    margin-left: 20px;
+    position: relative;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        margin-right: 20px;
+        margin-left: 0;
+    }
+
+    &.${ activeClassName } {
+        &:after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            background: black;
+            bottom: 0;
+        }
+    }
+`;
+
+const CloseNavLink = styled(NavLink)`
+    margin-left: 20px;
+
+    ${ Text } {
+        color: ${ ({ theme}) => theme.tertiaryColor };
+    }
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        margin-right: 20px;
+        margin-left: 0;
+    }
+`;
+
+const CloseLink= styled(NavLink)`
+    ${ Text } {
+        color: ${ ({ theme}) => theme.tertiaryColor };
+    }
+`;
+
+const Close= styled.div`
+    margin: 28px 0;
+    display: none;
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        display: block;
+    }
+`;
+
+const StyledCloseIcon= styled(CloseIcon)`
+    width: 22px;
+    height: 22px;
+    display: none;
+    transform: rotate(-90deg);
+
+    path {
+        fill: black;
+    }
+
+    @media(max-width: ${ ({ theme }) => theme.tabletBreakpoint }) {
+        display: block;
     }
 `;
